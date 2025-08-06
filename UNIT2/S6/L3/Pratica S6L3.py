@@ -15,7 +15,7 @@ def valida_pacchetti(pacchetti_str):
     if pacchetti <= 0:
         raise ValueError
 
-def inondazione_udp(ip_bersaglio, porta_bersaglio, numero_pacchetti):
+def flood_udp(ip_bersaglio, porta_bersaglio, numero_pacchetti):
     socket_udp = None
     try:
         porta_bersaglio = int(porta_bersaglio)
@@ -37,7 +37,7 @@ def inondazione_udp(ip_bersaglio, porta_bersaglio, numero_pacchetti):
         if socket_udp:
             socket_udp.close()
 
-print("--- Simulazione UDP Flood ---")
+print("--- Simulazione Flood UDP ---")
 
 while True:
     try:
@@ -63,4 +63,4 @@ while True:
     except ValueError:
         print("Numero di pacchetti non valido. Inserisci un numero maggiore di 0.")
 
-inondazione_udp(ip_bersaglio, porta_bersaglio, numero_pacchetti)
+flood_udp(ip_bersaglio, porta_bersaglio, numero_pacchetti)
